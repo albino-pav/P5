@@ -1,0 +1,1 @@
+1	Seno	ADSR_A=0.01; ADSR_D=0; ADSR_S=0.5; ADSR_R=0.02;

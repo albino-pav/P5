@@ -1,0 +1,1 @@
+1	Strings ADSR_A=0.02; ADSR_S=0.5; ADSR_R=0.1; N=40;

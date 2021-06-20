@@ -1,1 +1,2 @@
-1	Tremolo	fm=12; A=0.10;
+13 Distortion tm=0.01; t=0.75;
+
