@@ -13,7 +13,7 @@ def midi2sco(ficMIDI, ficScore, beats_per_minute=120, ticks_per_beat=144):
         print(f"Error al abrir el fichero {ficMIDI} ({os.strerror(e.returncode)})")
         exit(1)
 
-    reTempo = re.compile('tempo:\s*(?P<tempo>\d+)')
+    reTempo = re.compile(r'tempo:\s*(?P<tempo>\d+)')
     for mensaje in mensajes:
         if reTempo.search(mensaje):
             tempo = reTempo.search(mensaje)['tempo']
@@ -32,11 +32,11 @@ def midi2sco(ficMIDI, ficScore, beats_per_minute=120, ticks_per_beat=144):
     print(f"usar estos mismos valores al reproducir {ficScore} con el programa 'synth'.\n")
 
 
-    sOrden = '\s*(?P<Orden>NoteOn|NoteOff)'
-    sTiempo = '\s+=(?P<Tiempo>[\d.]+)'
-    sCanal = '\s+(?P<Canal>\d+)'
-    sPitch = '\s+(?P<Pitch>\d+)'
-    sVelocidad = '\s+(?P<Velocidad>\d+)'
+    sOrden = r'\s*(?P<Orden>NoteOn|NoteOff)'
+    sTiempo = r'\s+=(?P<Tiempo>[\d.]+)'
+    sCanal = r'\s+(?P<Canal>\d+)'
+    sPitch = r'\s+(?P<Pitch>\d+)'
+    sVelocidad = r'\s+(?P<Velocidad>\d+)'
     reNota = re.compile(sOrden + sTiempo + sCanal + sPitch + sVelocidad)
 
     with open(ficScore, 'wt') as fpScore:
